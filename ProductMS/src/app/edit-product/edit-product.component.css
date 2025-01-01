@@ -1,0 +1,66 @@
+/* Neutral and professional colors */
+.p-inputtext, .p-textarea {
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ced4da; /* Light gray border */
+  }
+
+  .p-inputtext:focus, .p-textarea:focus {
+    border-color: #80bdff; /* Highlighted border */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+  }
+
+  .p-error {
+    color: #dc3545; /* Bootstrap's danger color */
+  }
+
+  button.p-button-success {
+    background-color: #007bff; /* Blue button */
+    border-color: #007bff;
+  }
+
+  button.p-button-success:hover {
+    background-color: #0056b3;
+  }
+
+  .p-fluid {
+    padding: 20px; /* Add padding around the form */
+    max-width: 700px; /* Limit form width */
+    margin: auto; /* Center the form */
+    background: #f8f9fa; /* Light background for the form */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+
+  .p-field {
+    margin-bottom: 1.25rem; /* Adjust spacing */
+  }
+
+  button.p-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+  }
+
+  label {
+    display: block; /* Ensures the label appears above the input */
+    margin-bottom: 8px; /* Adds space below the label */
+    font-size: 14px;
+    font-weight: 600;
+    color: #495057; /* Neutral gray */
+  }
+  
+  .p-inputtext, .p-textarea {
+    margin-top: 5px; /* Adds space above the input */
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #212529;
+  }
+
+  .toast-success {
+    background-color: #51A351;
+   }
+
+  
+  

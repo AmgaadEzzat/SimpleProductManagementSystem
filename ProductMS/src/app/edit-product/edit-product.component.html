@@ -1,0 +1,48 @@
+<p-toast position="top-center"  [baseZIndex]="5000" [style]="{'background-color': 'blue', 'color': 'white'}"></p-toast>
+<form [formGroup]="productForm" (ngSubmit)="updateProduct()" class="p-fluid p-formgrid p-grid">
+    <!-- Name Field -->
+    <div class="p-field p-col-12 p-md-6">
+        <label for="name" class="p-d-block">Name</label>
+        <input type="text" id="name" pInputText formControlName="name" 
+        class="p-inputtext-lg p-d-block" placeholder="Enter product name" />
+        <small class="p-error" *ngIf="productForm.get('name')?.invalid && (productForm.get('name')?.dirty || productForm.get('name')?.touched)">
+        Name is required and cannot exceed 100 characters.
+        </small>
+    </div>
+
+    <!-- Description Field -->
+    <div class="p-field p-col-12 p-md-6">
+        <label for="description" class="p-d-block">Description</label>
+        <textarea id="description" pInputTextarea rows="5" cols="30" formControlName="description"
+        class="p-inputtextarea-lg p-d-block" placeholder="Enter product description" maxlength="500"></textarea>
+        
+        <!-- Character Counter -->
+        <small class="p-text-muted">
+        {{ productForm.get('description')?.value?.length || 0 }} / 500 characters
+        </small>
+
+        <!-- Validation messages -->
+        <div *ngIf="productForm.get('description')?.invalid && (productForm.get('description')?.dirty || productForm.get('description')?.touched)" class="p-error">
+        <small *ngIf="productForm.get('description')?.hasError('required')">Description is required.</small>
+        <small *ngIf="productForm.get('description')?.hasError('maxlength')">Description cannot exceed 500 characters.</small>
+        </div>
+    </div>
+
+    <!-- Price Field -->
+    <div class="p-field p-col-12 p-md-6">
+        <label for="price" class="p-d-block">Price</label>
+        <input type="number" id="price" pInputText formControlName="price"
+        class="p-inputtext-lg p-d-block" placeholder="Enter product price" />
+        <small class="p-error" *ngIf="productForm.get('price')?.invalid && (productForm.get('price')?.dirty || productForm.get('price')?.touched)">
+        Price is required and must be a positive number.
+        </small>
+    </div>
+
+    <div class="p-field p-col-12">
+        <button pButton type="submit" label="Create Product" 
+          [disabled]="productForm.invalid" 
+          [ngClass]="{'p-button-outlined': productForm.invalid, 'p-button-success': productForm.valid, 'p-button-lg': true}" 
+          icon="pi pi-check" class="p-w-full p-shadow-2 p-border-round p-button-raised">
+        </button>
+      </div>
+</form>
